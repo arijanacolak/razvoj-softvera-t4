@@ -1,16 +1,24 @@
 package ba.unsa.etf.rs.tut4;
 
-import java.util.ArrayList;
+import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
 
-public class Main {
+public class Main extends Application {
+
+    @Override
+    public void start(Stage primaryStage) throws Exception{
+        Parent root = FXMLLoader.load(getClass().getResource("/artikal.fxml"));
+        primaryStage.setTitle("Kasa");
+        primaryStage.setScene(new Scene( root,550, 600));
+        primaryStage.setResizable(false);
+        primaryStage.show();
+    }
+
 
     public static void main(String[] args) {
-
-        ArrayList<Artikal> lista = new ArrayList<>();
-        lista.add(new Artikal("ABC", "Proizvod", 100));
-        lista.add(new Artikal("DEF", "Usluga", 200));
-        lista.add(new Artikal("ABC", "Proizvod", 100));
-        if(lista.get(0).equals(lista.get(1)))
-            System.out.println("Sretan rad na tutorijalu 4!");
+        launch(args);
     }
 }
