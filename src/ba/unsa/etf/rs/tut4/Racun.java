@@ -2,9 +2,9 @@ package ba.unsa.etf.rs.tut4;
 
 import java.util.ArrayList;
 
-public class Racun {
+ public class Racun {
 
-    class Stavka {
+   public static class Stavka {
         public Artikal a;
         public Integer k;
 
@@ -12,8 +12,13 @@ public class Racun {
             this.a = a;
             this.k = k;
         }
+       public String toString() {
+           return (a.getSifra() + " " + k + " " + a.getCijena() * k  + "\n");
+       }
+       public Stavka() {
+       }
 
-        public Artikal getA() {
+       public Artikal getA() {
             return a;
         }
 

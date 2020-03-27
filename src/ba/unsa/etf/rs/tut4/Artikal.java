@@ -46,23 +46,10 @@ public class Artikal {
         return (sifra + "," + naziv + "," + cijena + "\n");
     }
 
-    /*public boolean equals(Object o) {
+    public boolean equals(Object o) {
         if(!(o instanceof Artikal)) return false;
         Artikal a = (Artikal) o;
         return (this.sifra.equals(a.sifra) && this.naziv.equals(a.naziv) && this.cijena == a.cijena);
-    }
-*/
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
-        Artikal artikal = (Artikal) o;
-
-        if (Double.compare(artikal.cijena, cijena) != 0) return false;
-        if (sifra != null ? !sifra.equals(artikal.sifra) : artikal.sifra != null) return false;
-        return naziv != null ? naziv.equals(artikal.naziv) : artikal.naziv == null;
     }
 
 
