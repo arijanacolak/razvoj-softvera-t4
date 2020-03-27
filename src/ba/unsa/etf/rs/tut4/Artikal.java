@@ -7,8 +7,7 @@ public class Artikal {
     private String sifra, naziv;
     private double cijena;
 
-    public Artikal(String toString) {
-    }
+    public Artikal() {}
 
     public Artikal(String sifra, String naziv, double cijena) {
         setSifra(sifra);
@@ -44,7 +43,7 @@ public class Artikal {
     }
 
     public String toString() {
-        return (sifra + "," + naziv + "," + cijena);
+        return (sifra + "," + naziv + "," + cijena + "\n");
     }
 
     /*public boolean equals(Object o) {
