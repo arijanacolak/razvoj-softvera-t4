@@ -4,12 +4,16 @@ import java.util.ArrayList;
 import java.util.Objects;
 
 public class Artikal {
-    private String sifra, naziv;
+    private String sifra;
+    private String naziv;
     private double cijena;
 
     public Artikal() {}
 
     public Artikal(String sifra, String naziv, double cijena) {
+      /*  this.sifra = sifra;
+        this.naziv = naziv;
+        this.cijena = cijena;*/
         setSifra(sifra);
         setNaziv(naziv);
         setCijena(cijena);
@@ -20,7 +24,7 @@ public class Artikal {
     }
 
     public void setSifra(String sifra) {
-        if(sifra.isEmpty()) throw new IllegalArgumentException("Šifra je prazna");
+        //if(sifra.isEmpty()) throw new IllegalArgumentException("Šifra je prazna");
         this.sifra = sifra;
     }
 

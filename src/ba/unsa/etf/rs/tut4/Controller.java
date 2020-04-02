@@ -15,6 +15,9 @@ public class Controller {
     public ChoiceBox choiceB;
     public Spinner spinner;
     public TextArea aktuelni_racun;
+    private double ukupno = 0;
+    Racun racun = new Racun();
+
 
     public void dodajArtikle(ActionEvent actionEvent) {
         ArrayList<Artikal> lista  = new ArrayList<Artikal>();
@@ -42,6 +45,7 @@ public class Controller {
            // text2.appendText(lista.toString());
     }
 
+
     public void dodajNaRacun(ActionEvent actionEvent) {
         int value = (Integer) spinner.getValue();
         String s = new String();
@@ -64,6 +68,7 @@ public class Controller {
                 a.setNaziv(s5[1]);
                 a.setCijena(Double.parseDouble(s5[2]));
                 if (s.equals(a.getSifra())) {
+                    b.setSifra(a.getSifra());
                     b.setNaziv(a.getNaziv().toString());
                     b.setCijena(a.getCijena());
                 }
@@ -72,15 +77,13 @@ public class Controller {
             stavka.setK(value);
             stavka.setA(b);
             s2.add(stavka);
+            racun.dodajStavku(stavka.getA(), stavka.getK());
 
-       /* for(int i = 0; i < s2.size(); i++)
-             aktuelni_racun.setText(s2.get(i).toString() + "\n");
-    }*/
         for(Racun.Stavka st : s2) {
-            aktuelni_racun.setText(stavka.toString() + "\n");
-           // System.out.println(st + "\n");
+          //  ukupno += (st.getA().getCijena() * st.getK());
+            aktuelni_racun.appendText(stavka.toString());
+
         }
+        aktuelni_racun.appendText("UKUPNO  " + racun.ukupanIznos() + "\n");
     }
-
-
 }

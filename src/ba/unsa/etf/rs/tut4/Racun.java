@@ -33,12 +33,22 @@ import java.util.ArrayList;
         public void setK(Integer k) {
             this.k = k;
         }
-    }
+    };
+
     private ArrayList<Stavka> stavke;
     public Racun () {
         stavke = new ArrayList<>();
     }
-    public void dodajStavku(Artikal a, int ponavlja) {
+
+     public ArrayList<Stavka> getStavke() {
+         return stavke;
+     }
+
+     public void setStavke(ArrayList<Stavka> stavke) {
+         this.stavke = stavke;
+     }
+
+     public void dodajStavku(Artikal a, int ponavlja) {
         stavke.add(new Stavka(a, ponavlja));
     }
 
