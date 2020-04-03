@@ -24,7 +24,7 @@ public class Artikal {
     }
 
     public void setSifra(String sifra) {
-        //if(sifra.isEmpty()) throw new IllegalArgumentException("Šifra je prazna");
+        if(sifra.isEmpty()) throw new IllegalArgumentException("Šifra je prazna");
         this.sifra = sifra;
     }
 

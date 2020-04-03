@@ -13,7 +13,7 @@ import java.util.ArrayList;
             this.k = k;
         }
        public String toString() {
-           return (a.getSifra() + " " + k + " " + a.getCijena() * k  + "\n");
+           return (a.getSifra() + "     " + k + "       " + String.format("%.2f", a.getCijena() * k) + "\n");
        }
        public Stavka() {
        }
@@ -33,9 +33,10 @@ import java.util.ArrayList;
         public void setK(Integer k) {
             this.k = k;
         }
+
     };
 
-    private ArrayList<Stavka> stavke;
+    public ArrayList<Stavka> stavke;
     public Racun () {
         stavke = new ArrayList<>();
     }

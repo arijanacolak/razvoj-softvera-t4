@@ -5,17 +5,17 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.scene.control.*;
 
+import java.math.RoundingMode;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 public class Controller {
-
 
     public TextArea text1;
     public TextArea text2;
     public ChoiceBox choiceB;
     public Spinner spinner;
     public TextArea aktuelni_racun;
-    private double ukupno = 0;
     Racun racun = new Racun();
 
 
@@ -42,9 +42,9 @@ public class Controller {
         for (Object o : lista){
             text2.appendText(o + "");
         }
-           // text2.appendText(lista.toString());
     }
 
+    String pom = new String();
 
     public void dodajNaRacun(ActionEvent actionEvent) {
         int value = (Integer) spinner.getValue();
@@ -54,7 +54,6 @@ public class Controller {
 
             Racun.Stavka stavka = new Racun.Stavka();
             Artikal b = new Artikal();
-            /*String s3 = new String();*/
             String s3 = new String();
             s3 = text2.getText();
             ArrayList<Artikal> lista = new ArrayList<Artikal>();
@@ -78,12 +77,10 @@ public class Controller {
             stavka.setA(b);
             s2.add(stavka);
             racun.dodajStavku(stavka.getA(), stavka.getK());
-
         for(Racun.Stavka st : s2) {
-          //  ukupno += (st.getA().getCijena() * st.getK());
-            aktuelni_racun.appendText(stavka.toString());
-
+            pom += stavka.toString();
+            aktuelni_racun.setText(pom + "\n" + "UKUPNO            " + String.format("%.2f", racun.ukupanIznos()) + "\n");
         }
-        aktuelni_racun.appendText("UKUPNO  " + racun.ukupanIznos() + "\n");
+
     }
 }
