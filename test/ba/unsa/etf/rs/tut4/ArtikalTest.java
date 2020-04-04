@@ -140,4 +140,14 @@ class ArtikalTest {
         assertFalse(lista.contains(new Artikal("ABC", "Usluga", 100)));
         assertFalse(lista.contains(new Artikal("DEF", "Usluga", 100)));
     }
+
+    @Test
+    void testToString() {
+        Artikal a = new Artikal();
+        a.setSifra("HLBNOO");
+        a.setNaziv("Hljeb");
+        a.setCijena(1.20);
+       assertEquals("HLBNOO,Hljeb,1.2\n", a.toString());
+    }
+
 }

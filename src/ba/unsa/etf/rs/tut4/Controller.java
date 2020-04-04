@@ -13,6 +13,7 @@ public class Controller {
 
     public TextArea text1;
     public TextArea text2;
+    public Button dodaj;
     public ChoiceBox choiceB;
     public Spinner spinner;
     public TextArea aktuelni_racun;
@@ -79,7 +80,7 @@ public class Controller {
             racun.dodajStavku(stavka.getA(), stavka.getK());
         for(Racun.Stavka st : s2) {
             pom += stavka.toString();
-            aktuelni_racun.setText(pom + "\n" + "UKUPNO            " + String.format("%.2f", racun.ukupanIznos()) + "\n");
+            aktuelni_racun.setText(pom + "\n" + "UKUPNO " + String.format("%.2f", racun.ukupanIznos()) + "\n");
         }
 
     }

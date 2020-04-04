@@ -13,10 +13,9 @@ import java.util.ArrayList;
             this.k = k;
         }
        public String toString() {
-           return (a.getSifra() + "     " + k + "       " + String.format("%.2f", a.getCijena() * k) + "\n");
+           return (a.getSifra().toString() + " " + k + " " + String.format("%.2f", a.getCijena() * k) + "\n");
        }
-       public Stavka() {
-       }
+       public Stavka() { }
 
        public Artikal getA() {
             return a;
@@ -40,14 +39,6 @@ import java.util.ArrayList;
     public Racun () {
         stavke = new ArrayList<>();
     }
-
-     public ArrayList<Stavka> getStavke() {
-         return stavke;
-     }
-
-     public void setStavke(ArrayList<Stavka> stavke) {
-         this.stavke = stavke;
-     }
 
      public void dodajStavku(Artikal a, int ponavlja) {
         stavke.add(new Stavka(a, ponavlja));
