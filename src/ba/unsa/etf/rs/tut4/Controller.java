@@ -52,7 +52,6 @@ public class Controller {
         String s = new String();
         s = choiceB.getValue().toString();
         ArrayList<Racun.Stavka> s2 = new ArrayList<>();
-
             Racun.Stavka stavka = new Racun.Stavka();
             Artikal b = new Artikal();
             String s3 = new String();
@@ -82,6 +81,5 @@ public class Controller {
             pom += stavka.toString();
             aktuelni_racun.setText(pom + "\n" + "UKUPNO " + String.format("%.2f", racun.ukupanIznos()) + "\n");
         }
-
     }
 }
